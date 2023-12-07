@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2023 at 02:58 AM
+-- Generation Time: Dec 07, 2023 at 04:21 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -41,7 +41,7 @@ CREATE TABLE `tb_dokter` (
 --
 
 INSERT INTO `tb_dokter` (`id_dokter`, `nama_dokter`, `spesialis`, `alamat`, `no_telp`, `deleted_at`) VALUES
-(1, 'dr Siti Chadijah, Sp.PD', 'Penyakit Dalam', 'Jl Raya By Pass Km 7 Pisang-Pauh Padang, Lubuk Begalung', '081233334445', NULL),
+(1, 'dr Akbar', 'Paru', 'Salatiga', '0851xxxxxxxx', NULL),
 (2, 'dr Elda Devita Harsa, Sp.P', 'Paru', 'Agroindustri Pisang Kipas Di Kelurahan Sialang Sakti Kecamatan Tenayan Raya Kota Pekanbaru', '081245451313', NULL),
 (3, 'drg. Mega Moeharyono Puteri, Ph.D.,Sp.KGA(K)-AIBK', 'Gigi', 'Jl. Airlangga No.4 - 6, Airlangga, Kec. Gubeng, Surabaya, Jawa Timur 60115', '082113055109', NULL);
 
@@ -75,7 +75,7 @@ INSERT INTO `tb_obat` (`id_obat`, `nama_obat`, `keterangan`, `deleted_at`) VALUE
 
 CREATE TABLE `tb_pasien` (
   `id_pasien` int(50) NOT NULL,
-  `nomor_identitas` int(30) DEFAULT NULL,
+  `nomor_identitas` varchar(30) DEFAULT NULL,
   `nama_pasien` varchar(50) DEFAULT NULL,
   `jenis_kelamin` enum('L','P') DEFAULT NULL,
   `alamat` text DEFAULT NULL,
@@ -88,9 +88,10 @@ CREATE TABLE `tb_pasien` (
 --
 
 INSERT INTO `tb_pasien` (`id_pasien`, `nomor_identitas`, `nama_pasien`, `jenis_kelamin`, `alamat`, `no_telp`, `deleted_at`) VALUES
-(1, NULL, 'Agus Pambagya', 'L', 'Tembalang', '0812xxxxxxxxx', NULL),
-(2, NULL, 'Rerena', 'P', 'Jl. Pandanaran No.79, Mugassari, Kec. Semarang Sel., Kota Semarang, Jawa Tengah 50249', '0892xxxxxxxxx', NULL),
-(3, NULL, 'Salsabilla', 'P', 'Tembalang', '08223233323', NULL);
+(1, '21120121130011', 'Agus Pambagya', 'L', 'Tembalang', '0812xxxxxxxxx', NULL),
+(2, '21120121130071', 'Rendy Hartono Putra', 'P', 'Ds. Cokroyasan RT 01/ RW 02, Kec. Ngombol, Kab. Purworejo, Jawa Tengah', '081226077106', NULL),
+(3, '21120121130042', 'Salsabilla', 'P', 'Jalan Merpati Sakti C4, Pekanbaru', '081222430712', NULL),
+(4, '21120121140150', 'Hilmy Nurakmal Satria', 'L', 'Jl. Gedongsongo Tengah 15/01 No.21, Manyaran, Semarang Barat', '081225939540', NULL);
 
 -- --------------------------------------------------------
 
@@ -136,9 +137,10 @@ CREATE TABLE `tb_rekammedis` (
 --
 
 INSERT INTO `tb_rekammedis` (`id_rm`, `id_pasien`, `keluhan`, `id_dokter`, `diagnosa`, `id_poli`, `tgl_periksa`, `deleted_at`) VALUES
-(1, 3, 'Ngantuk', 2, 'Kurang Tidur', 3, '2023-12-07', NULL),
+(1, 3, 'Ngantuk', 1, 'Kurang Tidur', 2, '2023-12-07', NULL),
 (2, 1, 'Susah Tidur', 3, 'Insomnia', 1, '2023-12-01', NULL),
-(3, 2, 'Lelah', 3, 'Keseringan Begadang', 3, '2023-12-12', NULL);
+(3, 2, 'Kecapekan', 2, 'Demam', 1, '2023-12-07', NULL),
+(4, 4, 'Mata mudah lelah', 2, 'Kurang tidur', 2, '2023-12-07', NULL);
 
 -- --------------------------------------------------------
 
@@ -159,7 +161,10 @@ CREATE TABLE `tb_rm_obat` (
 INSERT INTO `tb_rm_obat` (`id_rm_obat`, `id_rm`, `id_obat`) VALUES
 (7, 1, 3),
 (8, 2, 3),
-(9, 3, 3);
+(9, 2, 2),
+(12, 3, 1),
+(19, 4, 1),
+(20, 4, 3);
 
 -- --------------------------------------------------------
 
@@ -240,7 +245,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_rm_obat`
 --
 ALTER TABLE `tb_rm_obat`
-  MODIFY `id_rm_obat` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_rm_obat` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
