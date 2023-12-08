@@ -78,3 +78,31 @@ git commit -m first commit
 git remote add origin https://github.com/rendyhp/TA_PSBD_SI_RumahSakit
 git push -u origin master
 echo # TA_PSBD_SI_RumahSakit
+# TA_PSBD_SI_RumahSakit >> README.md
+git init
+git add README.md
+git commit -m first commit
+git remote add origin https://github.com/rendyhp/TA_PSBD_SI_RumahSakit
+git push -u origin master
+echo # TA_PSBD_SI_RumahSakit
+# TA_PSBD_SI_RumahSakit >> README.md
+git init
+git add README.md
+git commit -m first commit
+git remote add origin https://github.com/rendyhp/TA_PSBD_SI_RumahSakit
+git push -u origin master
+echo # TA_PSBD_SI_RumahSakit
+# TA_PSBD_SI_RumahSakit >> README.md
+git init
+git add README.md
+git commit -m first commit
+git remote add origin https://github.com/rendyhp/TA_PSBD_SI_RumahSakit
+git push -u origin master
+echo # TA_PSBD_SI_RumahSakit
+# TA_PSBD_SI_RumahSakit >> README.md
+git init
+git add README.md
+git commit -m first commit
+git remote add origin https://github.com/rendyhp/TA_PSBD_SI_RumahSakit
+git push -u origin master
+echo # TA_PSBD_SI_RumahSakit
